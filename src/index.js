@@ -45,7 +45,9 @@ class Sorter {
       bufArray.push(this.array[i]);
     });    
     bubbleSort(bufArray, this.comparatorFunction);  
-    return bufArray;
+    indices.forEach((item, i) => {
+      this.array[item]=bufArray[i];
+    })
   }
 
   setComparator(compareFunction) {
