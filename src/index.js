@@ -26,7 +26,7 @@ class Sorter {
 
   sort(indices) {
 
-    function bubbleSort(arr,comparator) {
+    /*function bubbleSort(arr,comparator) {
       for (var i = 0, endI = arr.length - 1; i < endI; i++) {
         for (var j = 0, endJ = endI - i; j < endJ; j++) {
           if (comparator(arr[j], arr[j + 1])) {
@@ -37,7 +37,7 @@ class Sorter {
         }
       }
       return arr;
-    }
+    }*/
 
     if(!indices || indices.length <= 0){
       return this.array;
@@ -49,7 +49,8 @@ class Sorter {
       bufArray.push(this.array[item]);
     });
         
-    bubbleSort(bufArray, this.comparatorFunction);
+    //bubbleSort(bufArray, this.comparatorFunction);
+    bufArray.sort(this.comparatorFunction);
     indices.forEach((item, i) => {
       this.array[item] = bufArray[i];
     })
